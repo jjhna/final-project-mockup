@@ -1,14 +1,36 @@
 <template name="Home_Page">
-  <div class="ui middle aligned centered grid text container">
+  <div class="ui container">
 
-    <div class="four wide column">
-      <img class="ui small circular image" src="/images/meteor-logo.png"/>
-    </div>
+    {{#if Template.subscriptionsReady}}
+    <table style="margin-top: 20px" class="ui celled table">
+      <thead>
+      <tr>
+        <th>First</th>
+        <th>City</th>
+        <th>Date of Posting</th>
+        <th>Status: Looking for...</th>
+        <th>Maximum Occupants</th>
+        <th>Edit</th>
+        <th>Alert Poster</th>
+      </tr>
+      </thead>
 
-    <div class="eight wide column">
-      <h1>Welcome to this template</h1>
-      <p>Now get to work and modify this app!</p>
-    </div>
+      <tbody>
+      {{#each contact in contactsList}}
+      <tr>
+        <td>{{contact.first}}</td>
+        <td>{{contact.city}}</td>
+        <td>{{contact.date}}</td>
+        <td>{{contact.status}}</td>
+        <td>{{contact.occupants}}</td>
+        <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+    {{> Loading}}
+    {{/if}}
 
   </div>
 </template>
