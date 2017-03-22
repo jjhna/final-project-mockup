@@ -21,12 +21,6 @@ export const ContactsSchema = new SimpleSchema({
     optional: false,
     max: 200,
   },
-  city: {
-    label: 'city',
-    type: String,
-    optional: false,
-    max: 10,
-  },
   telephone: {
     label: 'telephone',
     type: Number,
@@ -38,24 +32,6 @@ export const ContactsSchema = new SimpleSchema({
     type: String,
     optional: false,
     max: 200,
-  },
-  date: {
-    label: 'date',
-    type: String,
-    optional: false,
-    max: 10,
-  },
-  status: {
-    label: 'status',
-    type: String,
-    optional: false,
-    max: 10,
-  },
-  occupants: {
-    label: 'occupants',
-    type: Number,
-    optional: false,
-    max: 10,
   },
 });
 

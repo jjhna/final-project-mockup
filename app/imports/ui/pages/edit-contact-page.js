@@ -38,14 +38,10 @@ Template.Edit_Contact_Page.events({
     // Get name (text field)
     const first = event.target.First.value;
     const last = event.target.Last.value;
-    const city = event.target.City.value;
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
-    const date = event.target.Date.value;
-    const status = event.target.Status.value;
-    const occupants = event.target.Occupants.value;
 
-    const updatedContactData = { first, last, city, telephone, email, date, status, occupants };
+    const updatedContactData = { first, last, telephone, email };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that updatedContactData reflects what will be inserted.

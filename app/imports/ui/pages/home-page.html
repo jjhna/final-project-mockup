@@ -1,36 +1,27 @@
 <template name="Home_Page">
   <div class="ui container">
+    <div class="ui cards">
+      <div class="card">
+        <div class="content">
+          <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+          <div class="header">
+           John Doe
+          </div>
+          <div class="meta">
+           Looking for a: Driver
+          </div>
+          <div class="description">
+            Request permission to view John Doe information
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">Approve</div>
+            <div class="ui basic red button">Decline</div>
+          </div>
+        </div>
+      </div>
 
-    {{#if Template.subscriptionsReady}}
-    <table style="margin-top: 20px" class="ui celled table">
-      <thead>
-      <tr>
-        <th>First</th>
-        <th>City</th>
-        <th>Date of Posting</th>
-        <th>Status: Looking for...</th>
-        <th>Maximum Occupants</th>
-        <th>Edit</th>
-        <th>Alert Poster</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      {{#each contact in contactsList}}
-      <tr>
-        <td>{{contact.first}}</td>
-        <td>{{contact.city}}</td>
-        <td>{{contact.date}}</td>
-        <td>{{contact.status}}</td>
-        <td>{{contact.occupants}}</td>
-        <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
-      </tr>
-      {{/each}}
-      </tbody>
-    </table>
-    {{else}}
-    {{> Loading}}
-    {{/if}}
-
+    </div>
   </div>
 </template>

@@ -7,3 +7,5 @@ import './header.js';
 import './if-logged-in.html';
 import './if-logged-in.js';
 import './loading.html';
+import './app-template.html';
+import './app-template.js';

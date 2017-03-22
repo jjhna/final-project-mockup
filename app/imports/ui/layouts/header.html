@@ -1,15 +1,8 @@
 <template name="Header">
-  <img style="max-height: 300px " class="ui fluid image" src="/images/carpool.jpg">
-  <div style="margin: 0px; border-radius: 0px" class="ui borderless inverted menu">
-    <div class="ui container">
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>UHpool</h1></a>
-      <a class="{{ isActiveRoute 'Add_Contact_Page'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Add Listing</a>
-      <a class="{{ isActiveRoute 'Edit_Contact_Page'}} item" href="{{ pathFor 'Edit_Contact_Page' }}">Edit Listing</a>
-      {{#if currentUser}}
-      <a class="{{ isActiveRoute 'Add_Stuff_Page'}} item" href="{{ pathFor 'Add_Stuff_Page' }}">Add Stuff </a>
-      <a class="{{ isActiveRoute 'List_Stuff_Page'}} item" href="{{ pathFor 'List_Stuff_Page' }}">List Stuff</a>
-      {{/if}}
-      <a href="#" class="item">{{> loginButtons }} </a>
-    </div>
+
+  <div style="margin: 0px; border-radius: 0px" class="ui equal width left green inverted segment">
+
+    <h1>UHpool</h1>
+
   </div>
 </template>

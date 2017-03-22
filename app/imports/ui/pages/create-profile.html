@@ -1,0 +1,77 @@
+<template name="Create_Profile">
+  <div style="margin-top: 20px" class="ui container">
+    <form class="ui form contact-data-form  {{ errorClass }}">
+      <h4 class="ui dividing header">Create Profile</h4>
+      <div class="field">
+        <div class="two fields">
+          {{> Text_Form_Control label="First" required=true errorMessage=(fieldError "first")}}
+          {{> Text_Form_Control label="Last" required=true errorMessage=(fieldError "last")}}
+        </div>
+      </div>
+
+
+          <div class="default text">City</div>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="city">
+            <i class="dropdown icon"></i>
+            <div class="default text">City</div>
+            <div class="menu">
+              <div class="item" data-value="0">Aiea</div>
+              <div class="item" data-value="1">Ewa Beach</div>
+              <div class="item" data-value="2">Hale'iwa</div>
+              <div class="item" data-value="3">Hau'ula</div>
+              <div class="item" data-value="4">Hawaii Kai</div>
+              <div class="item" data-value="5">Honolulu</div>
+              <div class="item" data-value="6">Ka'a'awa</div>
+              <div class="item" data-value="7">Kahala</div>
+              <div class="item" data-value="8">Kahuku</div>
+              <div class="item" data-value="9">Kailua</div>
+              <div class="item" data-value="10">Kane'ohe</div>
+              <div class="item" data-value="11">Kapolei</div>
+              <div class="item" data-value="12">Manoa</div>
+              <div class="item" data-value="13">Lanikai</div>
+              <div class="item" data-value="14">Ma'ili</div>
+            </div>
+          </div>
+<p></p>
+      <div class="field">
+        <div class="two fields">
+          {{> Text_Form_Control label="Telephone" required=true errorMessage=(fieldError "telephone")}}
+          {{> Text_Form_Control label="Email" required=true errorMessage=(fieldError "email")}}
+        </div>
+      </div>
+
+      <div class="default text">Status</div>
+      <div class="ui selection dropdown">
+        <input type="hidden" name="status">
+        <i class="dropdown icon"></i>
+        <div class="default text">Looking for a:</div>
+        <div class="menu">
+          <div class="item" data-value="1">Driver</div>
+          <div class="item" data-value="0">Carpooler</div>
+        </div>
+      </div>
+
+      <div class="default text">Occupants</div>
+      <div class="ui selection dropdown">
+        <input type="hidden" name="occupants">
+        <i class="dropdown icon"></i>
+        <div class="default text">Number of occupants your vehicle can hold: </div>
+        <div class="menu">
+          <div class="item" data-value="1">1</div>
+          <div class="item" data-value="2">2</div>
+          <div class="item" data-value="3">3</div>
+          <div class="item" data-value="4">4</div>
+          <div class="item" data-value="5">5</div>
+          <div class="item" data-value="6">6</div>
+          <div class="item" data-value="7">7</div>
+          <div class="item" data-value="8">8</div>
+          <div class="item" data-value="9">9</div>
+          <div class="item" data-value="10">10</div>
+        </div>
+      </div>
+      <p></p>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+</template>

@@ -8,13 +8,17 @@ import { Contacts, ContactsSchema } from '../../api/contacts/contacts.js';
 
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Add_Contact_Page.onCreated(function onCreated() {
-  this.messageFlags = new ReactiveDict();
-  this.messageFlags.set(displayErrorMessages, false);
-  this.context = ContactsSchema.namedContext('Add_Contact_Page');
+Template.Create_Profile.onRendered(function enableDropDown() {
+  this.$('.dropdown').dropdown();
 });
 
-Template.Add_Contact_Page.helpers({
+Template.Create_Profile.onCreated(function onCreated() {
+  this.messageFlags = new ReactiveDict();
+  this.messageFlags.set(displayErrorMessages, false);
+  this.context = ContactsSchema.namedContext('Create_Profile');
+});
+
+Template.Create_Profile.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
@@ -26,20 +30,16 @@ Template.Add_Contact_Page.helpers({
 });
 
 
-Template.Add_Contact_Page.events({
+Template.Create_Profile.events({
   'submit .contact-data-form'(event, instance) {
     event.preventDefault();
     // Get name (text field)
     const first = event.target.First.value;
     const last = event.target.Last.value;
-    const city = event.target.City.value;
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
-    const date = event.target.Date.value;
-    const status = event.target.Status.value;
-    const occupants = event.target.Occupants.value;
 
-    const newContactData = { first, last, city, telephone, email, date, status, occupants };
+    const newContactData = { first, last, telephone, email};
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newContactData reflects what will be inserted.
